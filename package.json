@@ -12,6 +12,8 @@
   },
   "private": true,
   "dependencies": {
+    "font-awesome": "~4.7.0",
+    "angular2-fontawesome": "~0.8.0",
     "@angular/common": "^2.4.0",
     "@angular/compiler": "^2.4.0",
     "@angular/core": "^2.4.0",

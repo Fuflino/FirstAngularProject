@@ -1,4 +1,24 @@
-<ul>
-  <li *ngFor="let user of users"> {{user.name}} - {{user.education}} </li>
-</ul>
+<fap-toolbar></fap-toolbar>
+
+<md-card *ngFor="let user of users">
+  <md-card-title>
+    {{user.name}} Info:
+  </md-card-title>
+  <md-card-content>
+    Name: {{user.name}}<h3></h3>
+    Education: {{user.education}}<h3></h3>
+    Age: {{user.age}}<h3></h3>
+  </md-card-content>
+</md-card>
+<h1></h1>
+<md-input-container>
+  <input mdInput
+         placeholder="Name"
+         [(ngModel)]="userName">
+</md-input-container>
+Name: {{userName}}
+<button md-raised-button></button>
+
+
+
 

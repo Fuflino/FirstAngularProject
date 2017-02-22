@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {User} from "./User";
 
 @Component({
@@ -9,8 +9,10 @@ import {User} from "./User";
 export class UsersComponent implements OnInit {
   title = 'Users';
   users: User[];
+  userName: string;
+
   constructor() {
-    this.users =[{
+    this.users = [{
       name: 'Jeanette S.',
       age: 32,
       birthday: "02.02.1984",
