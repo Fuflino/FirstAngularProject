@@ -1,27 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 import {User} from "./User";
+import {UsersService} from "./users.service";
 
 @Component({
-  selector: 'app-users',
+  selector: 'ih-users',
   templateUrl: './users.component.html',
   styleUrls: ['./users.component.css']
 })
 export class UsersComponent implements OnInit {
   title = 'Users';
+  userName: string;
+  iconName:string;
   users: User[];
-  constructor() {
-    this.users =[{
-      name: 'Jeanette S.',
-      age: 32,
-      birthday: "02.02.1984",
-      education: 'EASV'
-    },
-      {
-        name: "Stefan T.",
-        age: 32,
-        birthday: "03.03.1985",
-        education: 'EASV'
-      }];
+  constructor(private userService : UsersService) {
+    this.users = userService.getUsers();
   }
 
   ngOnInit() {

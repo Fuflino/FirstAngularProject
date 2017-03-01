@@ -1,0 +1,23 @@
+<form (ngSubmit)="tryCreate()">
+  <md-card-content>
+    <md-input-container>
+      <input mdInput placeholder="Id" name="id" [(ngModel)]="user.id">
+    </md-input-container>
+    <md-input-container>
+      <input mdInput placeholder="Name" name="name" [(ngModel)]="user.name">
+    </md-input-container>
+    <md-input-container>
+      <input mdInput placeholder="Age" name="age" type="number" [(ngModel)]="user.age">
+    </md-input-container>
+    <md-input-container>
+      <input mdInput placeholder="Birthdate" name="birthday" [(ngModel)]="user.birthday">
+    </md-input-container>
+    <md-input-container>
+      <input mdInput placeholder="Education" name="education" [(ngModel)]="user.education">
+    </md-input-container>
+  </md-card-content>
+  <md-card-actions class="example-button-row">
+    <button type="button" class="login-button" md-warn routerLink="/lostPassword">Lost Password</button>
+    <button type="submit" md-raised-button color="primary">Create</button>
+  </md-card-actions>
+</form>
