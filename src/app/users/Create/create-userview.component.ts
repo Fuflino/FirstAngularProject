@@ -1,5 +1,5 @@
 import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
-import {User} from "../users/user";
+import {User} from "../user";
 
 @Component({
   selector: 'fap-create-userview',

@@ -1,14 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import {UsersService} from "../users/users.service";
+import {UsersService} from "../users.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'fap-create-user',
-  templateUrl: './create-user.component.html'
+  templateUrl: 'create-user.component.html'
 })
 export class CreateUserComponent implements OnInit {
 
 
-  constructor(private userService: UsersService) {
+  constructor(private userService: UsersService, private router: Router) {
   }
 
   ngOnInit() {
@@ -17,5 +18,7 @@ export class CreateUserComponent implements OnInit {
   createUser(user){
     console.log("createUser");
   this.userService.addUser(user);
+  this.router.navigate(['/users']);
+
   }
 }

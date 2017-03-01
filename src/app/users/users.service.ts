@@ -2,15 +2,11 @@ import {Injectable, OnInit} from '@angular/core';
 import {User} from "./user";
 
 @Injectable()
-export class UsersService implements OnInit{
+export class UsersService{
 
   private _users: User[];
 
   constructor() {
-
-  }
-
-  ngOnInit(){
     this._users = [{
       id: 'en',
       name: 'Jeanette S.',
@@ -26,6 +22,8 @@ export class UsersService implements OnInit{
         education: 'EASV'
       }];
   }
+
+
 
   getUsers() : User[]{
     return this._users;

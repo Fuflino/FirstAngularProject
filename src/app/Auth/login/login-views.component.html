@@ -1,6 +1,7 @@
-<button md-mini-fab routerLink="/"><fa [name]="'arrow left'"></fa></button>
-<div FxFlexFill [fxLayout]="row" fxLayoutAligh="center center">
+<button md-mini-fab routerLink="/"><fa [name]="'arrow-left'"></fa></button>
+<div FxFlexFill [fxLayout]="row" fxLayoutAlign="center center">
   <md-card style="margin: 0;width: 200px">
+    <div *ngIf="!tryToLogin">
     <fa [name]="'lock'"></fa> Login
     <p *ngIf="signInError && signInError.length > 0"
        class="error-message">
@@ -21,6 +22,11 @@
       <button type="submit" md-raised-button color="primary">Sign in</button>
     </md-card-actions>
     </form>
+    </div>
+    <div *ngIf="tryToLogin" fxFlexFill [fxLayout]="column" fxLayoutAlign="center center">
+      <h3><fa [name]="'handshake-o'"></fa> Trying to login, please wait...!</h3>
+      <h3><md-spinner></md-spinner></h3>
+    </div>
   </md-card>
 </div>
 

@@ -1,8 +1,10 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {MdSnackBar} from '@angular/material';
-import {UsersService} from "../../users/users.service";
-import {User} from "../../users/user";
+import {AuthService} from "../auth.service";
+import {Subscription} from "rxjs";
+
+
 
 @Component({
   selector: 'fap-login',
@@ -10,28 +12,39 @@ import {User} from "../../users/user";
 })
 export class LoginComponent implements OnInit {
   loginError:string;
-  users: User[];
-  constructor(public loginValidationBar : MdSnackBar, private router : Router, private userService: UsersService) {
-    this.users = userService.getUsers();
+  request: Subscription;
+  tryLogin: boolean;
+
+  constructor(public loginValidationBar : MdSnackBar, private router : Router,
+              private authService: AuthService) {
+
   }
 
   login(user){
-    console.log('user', user);
-    let userAccepted = this.users
-      .filter(x => x.name === user.name)
-      .filter(y => y.education === user.education);
-    if(userAccepted && userAccepted.length === 1) {
-      this.loginError = null;
-      this.router.navigate(['/']).then(() => {
-        this.loginValidationBar.open("You are logged in", "OK", {
-          duration: 4000,
-        });
-      });
-    } else {
-      this.loginError = "incorrect username or password";
+    this.tryLogin = true;
+    if (this.request){
+      this.request.unsubscribe();
+    }
+        this.request = this.authService
+        .login(user.name, user.education).delay(3000)
+        .subscribe((lUser) => {
+          if(lUser) {
+            this.loginError = null;
+            this.router.navigate(['/']).then(() => {
+              this.loginValidationBar.open("You are logged in", "OK", {
+                duration: 4000,
+              });
+            });
+            this.router.navigate(['/users']);
+          }
+          else {
+            this.loginError = "incorrect username or password";
+          }
+          this.tryLogin = false;
+        })
+
     }
 
-  }
   ngOnInit() {
   }
 

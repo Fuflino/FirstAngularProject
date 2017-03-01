@@ -16,8 +16,9 @@ import { FlexLayoutModule} from '@angular/flex-layout';
 import 'hammerjs';
 import { LoginComponent } from './Auth/login/login.component';
 import { LoginViewsComponent } from './Auth/login/login-views.component';
-import { CreateUserComponent } from './create-user/create-user.component';
-import { CreateUserviewComponent } from './create-user/create-userview.component';
+import { CreateUserComponent } from './users/Create/create-user.component';
+import { CreateUserviewComponent } from './users/Create/create-userview.component';
+import {AuthService} from "./Auth/auth.service";
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -48,7 +49,7 @@ const routes: Routes = [
     Angular2FontawesomeModule,
     FlexLayoutModule
   ],
-  providers: [UsersService],
+  providers: [UsersService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
