@@ -1,4 +1,3 @@
-
 <fap-toolbar></fap-toolbar>
 <h2>Users:</h2>
 
@@ -6,6 +5,9 @@
 
   <h3>{{user.name}}</h3>
   <h4>{{user.education}}</h4>
+
+  <button md-raised-button class="delete-button" (click)="deleteUser(user)">Delete user</button>
+  <button md-raised-button class="delete-button" (click)="updateUser(user)">Update user</button>
 
 </md-card>
 

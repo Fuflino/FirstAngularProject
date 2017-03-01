@@ -1,0 +1,27 @@
+<button md-mini-fab routerLink="/users"><fa [name]="'arrow-left'"></fa></button>
+<div FxFlexFill [fxLayout]="row" fxLayoutAlign="center center">
+  <md-card style="margin: 0;width: 200px">
+    <div>
+      <fa [name]="'pencil'"></fa> Login
+      <form (ngSubmit)="tryUpdate($event)">
+        <md-card-content>
+          <md-input-container>
+            <input mdInput placeholder="name" name="name" [(ngModel)]="user.name">
+          </md-input-container>
+          <md-input-container>
+            <input mdInput placeholder="Education" name="education" [(ngModel)]="user.education">
+          </md-input-container>
+          <md-input-container>
+            <input mdInput placeholder="Age" name="age" [(ngModel)]="user.age">
+          </md-input-container>
+          <md-input-container>
+            <input mdInput placeholder="Birthdate" name="birthday" [(ngModel)]="user.birthday">
+          </md-input-container>
+        </md-card-content>
+        <md-card-actions class="example-button-row">
+          <button type="submit" md-raised-button color="primary">Update user</button>
+        </md-card-actions>
+      </form>
+    </div>
+  </md-card>
+</div>

@@ -35,11 +35,12 @@ export class LoginComponent implements OnInit {
                 duration: 4000,
               });
             });
-            this.router.navigate(['/users']);
+
           }
           else {
             this.loginError = "incorrect username or password";
           }
+          this.router.navigate(["/users"]);
           this.tryLogin = false;
         })
 

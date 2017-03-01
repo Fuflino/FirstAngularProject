@@ -19,12 +19,15 @@ import { LoginViewsComponent } from './Auth/login/login-views.component';
 import { CreateUserComponent } from './users/Create/create-user.component';
 import { CreateUserviewComponent } from './users/Create/create-userview.component';
 import {AuthService} from "./Auth/auth.service";
+import { UpdateUserComponent } from './users/update-user/update-user.component';
+import { UpdateUserviewComponent } from './users/update-user/update-userview.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'users', component: UsersComponent},
   { path: 'login', component: LoginComponent},
-  { path: 'users/create', component: CreateUserComponent}
+  { path: 'users/create', component: CreateUserComponent},
+  { path: 'users/:id', component: UpdateUserComponent}
   ];
 
 @NgModule({
@@ -37,7 +40,9 @@ const routes: Routes = [
     LoginViewsComponent,
     CreateUserComponent,
     CreateUserviewComponent,
-    HomeComponent
+    HomeComponent,
+    UpdateUserComponent,
+    UpdateUserviewComponent
   ],
   imports: [
     BrowserModule,
