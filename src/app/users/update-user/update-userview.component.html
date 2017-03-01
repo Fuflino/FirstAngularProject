@@ -6,16 +6,16 @@
       <form (ngSubmit)="tryUpdate($event)">
         <md-card-content>
           <md-input-container>
-            <input mdInput placeholder="name" name="name" [(ngModel)]="user.name">
+            <input mdInput placeholder="Name" name="name" [(ngModel)]="inputUser.name">
           </md-input-container>
           <md-input-container>
-            <input mdInput placeholder="Education" name="education" [(ngModel)]="user.education">
+            <input mdInput placeholder="Education" name="education" [(ngModel)]="inputUser.education">
           </md-input-container>
           <md-input-container>
-            <input mdInput placeholder="Age" name="age" [(ngModel)]="user.age">
+            <input mdInput placeholder="Age" name="age" [(ngModel)]="inputUser.age">
           </md-input-container>
           <md-input-container>
-            <input mdInput placeholder="Birthdate" name="birthday" [(ngModel)]="user.birthday">
+            <input mdInput placeholder="Birthdate" name="birthday" [(ngModel)]="inputUser.birthday">
           </md-input-container>
         </md-card-content>
         <md-card-actions class="example-button-row">
