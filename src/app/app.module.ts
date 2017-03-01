@@ -1,3 +1,6 @@
+/**
+ * Created by Jeane on 01-03-2017.
+ */
 
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -25,7 +28,7 @@ const routes: Routes = [
   { path: 'users', component: UsersComponent},
   { path: 'login', component: LoginComponent},
   { path: 'users/create', component: CreateUserComponent}
-  ];
+];
 
 @NgModule({
   declarations: [
