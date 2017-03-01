@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'ih-home',
+
+  selector: 'fap-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })

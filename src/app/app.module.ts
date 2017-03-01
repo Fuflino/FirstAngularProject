@@ -1,3 +1,4 @@
+
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -23,7 +24,7 @@ const routes: Routes = [
   { path: 'users', component: UsersComponent},
   { path: 'login', component: LoginComponent},
   { path: 'users/create', component: CreateUserComponent}
-];
+  ];
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ const routes: Routes = [
     LoginComponent,
     LoginViewsComponent,
     CreateUserComponent,
-    CreateUserviewComponent
+    CreateUserviewComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -49,4 +51,5 @@ const routes: Routes = [
   providers: [UsersService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

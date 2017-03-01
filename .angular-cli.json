@@ -18,7 +18,7 @@
       "test": "test.ts",
       "tsconfig": "tsconfig.json",
       "prefix": "fap",
-      "Styles": [
+      "styles": [
         "styles.css",
         "../node_modules/font-awesome/css/font-awesome.css"
       ],
