@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {User} from "./User";
 import {UsersService} from "./users.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'ih-users',
@@ -13,7 +14,7 @@ export class UsersComponent implements OnInit {
   iconName:string;
   users: User[];
 
-  constructor(private userService : UsersService) {
+  constructor(private userService : UsersService, private router: Router) {
     this.users = userService.getUsers();
 
   }
@@ -22,4 +23,7 @@ export class UsersComponent implements OnInit {
 
   }
 
+  updateUser(user : User){
+    this.router.navigate(['/users/' + user.id])
+  }
 }

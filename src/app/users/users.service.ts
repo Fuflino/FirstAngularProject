@@ -34,13 +34,17 @@ export class UsersService{
     this._users.push(user);
   }
 
-  deleteUser(id : string){
-   this._users.filter(x => x.id === id).pop();
+  deleteUser(user : User){
+   this._users.filter(x => x.id === user.id).pop();
   }
 
   updateUser(user : User){
     this._users.filter(x => x.id === user.id).pop();
     this._users.push(user);
+  }
+
+  getUser(id: string) : User{
+    return this._users.filter(x => x.id === id)[0];
   }
 
 }

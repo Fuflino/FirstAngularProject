@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import {User} from "../users/user";
-import {Router} from "@angular/router";
 import {UsersService} from "../users/users.service";
 import {Observable} from "rxjs";
 
@@ -8,7 +7,7 @@ import {Observable} from "rxjs";
 export class AuthService {
 
   users: User[];
-  constructor(private router : Router, private userService: UsersService) {
+  constructor(private userService: UsersService) {
     this.users = userService.getUsers();
   }
 
