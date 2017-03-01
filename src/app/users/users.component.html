@@ -1,16 +1,19 @@
-
 <fap-toolbar></fap-toolbar>
 <h2>Users:</h2>
-
-<md-card *ngFor="let user of users">
-
-  <h3>{{user.name}}</h3>
-  <h4>{{user.education}}</h4>
-
-</md-card>
 
 <md-input-container>
   <input mdInput placeholder="Add name" [(ngModel)]="userName">
 </md-input-container>
 The name is: {{userName}}
 <fa [name]="'users'"></fa>
+
+<md-card *ngFor="let user of users">
+
+  <h3 align="center">Name: {{user.name}}</h3>
+  <h4 align="center">Education: {{user.education}}</h4>
+  <h4 align="center">Birthday: {{user.birthday}}</h4>
+  <h4 align="center">Age: {{user.age}}</h4>
+  <hr>
+</md-card>
+
+

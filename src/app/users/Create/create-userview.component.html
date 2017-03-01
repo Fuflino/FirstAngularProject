@@ -1,22 +1,30 @@
-<form (ngSubmit)="tryCreate()">
-  <md-card-content>
-    <md-input-container>
-      <input mdInput placeholder="Id" name="id" [(ngModel)]="user.id">
-    </md-input-container>
-    <md-input-container>
-      <input mdInput placeholder="Name" name="name" [(ngModel)]="user.name">
-    </md-input-container>
-    <md-input-container>
-      <input mdInput placeholder="Age" name="age" type="number" [(ngModel)]="user.age">
-    </md-input-container>
-    <md-input-container>
-      <input mdInput placeholder="Birthdate" name="birthday" [(ngModel)]="user.birthday">
-    </md-input-container>
-    <md-input-container>
-      <input mdInput placeholder="Education" name="education" [(ngModel)]="user.education">
-    </md-input-container>
-  </md-card-content>
-  <md-card-actions class="example-button-row">
-    <button type="submit" md-raised-button color="primary">Create</button>
-  </md-card-actions>
-</form>
+<br>
+<div FxFlexFill [fxLayout]="row" fxLayoutAlign="center center">
+  <form (ngSubmit)="tryCreate()">
+    <md-card>
+      <md-card-content>
+        <fa [name]="'users'"></fa>Register
+        <md-input-container fxFlexFill [fxLayout]="column" fxLayoutAlign="center center">
+          <input mdInput placeholder="Id" name="id" [(ngModel)]="user.id">
+        </md-input-container>
+        <md-input-container fxFlexFill [fxLayout]="column" fxLayoutAlign="center center">
+          <input mdInput placeholder="Name" name="name" [(ngModel)]="user.name">
+        </md-input-container>
+        <md-input-container fxFlexFill [fxLayout]="column" fxLayoutAlign="center center">
+          <input mdInput placeholder="Age" name="age" type="number" [(ngModel)]="user.age">
+        </md-input-container>
+        <md-input-container>
+          <input mdInput placeholder="Birthdate" name="birthday" [(ngModel)]="user.birthday">
+        </md-input-container>
+        <md-input-container fxFlexFill [fxLayout]="column" fxLayoutAlign="center center">
+          <input mdInput placeholder="Education" name="education" [(ngModel)]="user.education">
+        </md-input-container>
+      </md-card-content>
+      <md-card-actions class="example-button-row">
+        <button type="submit" md-raised-button color="primary">Register</button>
+      </md-card-actions>
+    </md-card>
+  </form>
+</div>
+
+
